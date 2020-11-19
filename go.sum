@@ -1,2 +1,4 @@
+github.com/google/uuid v1.1.2 h1:EVhdT+1Kseyi1/pUmXKaFxYsDNy9RQYkMWRH68J/W7Y=
+github.com/google/uuid v1.1.2/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/neocortical/flexjson v0.0.0-20160202192126-253e8f00151a h1:YfQyKi1n6n9b/XQ165qc1gZ52djPRMHhzFqA+rc4J7o=
 github.com/neocortical/flexjson v0.0.0-20160202192126-253e8f00151a/go.mod h1:lp8ZznesxdP2Y+MFzAtvVUEOSB2ZgWlaV5el/koNh+M=

@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"net/url"
+	"strings"
 	"time"
+	"github.com/google/uuid"
 )
 
 // STIX Objects:
@@ -17,33 +19,53 @@ import (
 // STIX Bundle:
 //   One or more STIX Objects
 
+type StixType string
+const (
+	ThreatActorType = "threat-actor"
+	IdentityType = "identity"
+	RelationshipType = "relationship"
+)
+
+
 type STIXObject struct {
-	Type string
-	SpecVersion string
-	ID string
-	Created time.Time
-	Modified time.Time
+	Type        string `json:"type" binding:"required"`
+	SpecVersion string `json:"spec_version"`
+	ID          string `json:"id"`
+	Created     time.Time `json:"created"`
+	Modified    time.Time `json:"modified"`
 }
 
 func printStixObject(stixObject STIXObject) {
-	fmt.Printf("Type: %v\n", stixObject.Type)
-	fmt.Printf("SpecVersion: %v\n", stixObject.SpecVersion)
-	fmt.Printf("Id: %v\n", stixObject.ID)
-	fmt.Printf("Created: %v\n", stixObject.Created)
-	fmt.Printf("Modified: %v\n", stixObject.Modified)
+	fmt.Println("\nSTIX Object: ...")
+	fmt.Printf("type: %v\n", stixObject.Type)
+	fmt.Printf("spec_version: %v\n", stixObject.SpecVersion)
+	fmt.Printf("id: %v\n", stixObject.ID)
+	fmt.Printf("created: %v\n", stixObject.Created)
+	fmt.Printf("modified: %v\n", stixObject.Modified)
 }
 
 type ExternalReference struct {
-	SourceName string
+	SourceName  string
 	Description string
-	Url url.URL
-	Hashes map[string]interface{}
-	ExternalID string
+	Url         url.URL
+	Hashes      map[string]interface{}
+	ExternalID  string
 }
 
 type KillChainPhase struct {
 	KillChainName string
-	PhaseName string
+	PhaseName     string
 }
 
+// New type
+
 type OpenVocab string
+
+type Identifier uuid.UUID
+
+func getUUID() {
+    uuidWithHyphen := uuid.New()
+    fmt.Println(uuidWithHyphen)
+    uuid := strings.Replace(uuidWithHyphen.String(), "-", "", -1)
+    fmt.Println(uuid)
+}

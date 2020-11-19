@@ -7,10 +7,10 @@ import (
 
 type ThreatActor struct {
 	CommonProperties STIXObject
-	Name string
+	Name string `json:"name" binding:"required"`
 	Description string
 	ThreatActorTypes [] string `json:"threat_actor_types"`
-	Aliases [] string
+	Aliases [] string `json:"aliases"`
 	FirstSeen time.Time `json:"first_seen"`
 	LastSeen time.Time `json:"last_seen"`
 	Roles [] string
@@ -23,44 +23,43 @@ type ThreatActor struct {
 }
 
 func printThreatActor(ta ThreatActor) {
-	fmt.Printf("\tType: %v\n", ta.CommonProperties.Type)
-	fmt.Printf("\tName: %v\n", ta.Name)
+	fmt.Printf("\tname: %v\n", ta.Name)
 	if len(ta.Description) > 0 {
-		fmt.Printf("\tDescription: %v\n", ta.Description)
+		fmt.Printf("\tdescription: %v\n", ta.Description)
 	}
 
 	if ta.ThreatActorTypes != nil {
-		fmt.Printf("\tThreatActorTypes: %v\n", ta.ThreatActorTypes)
+		fmt.Printf("\tthreat_actor_types: %v\n", ta.ThreatActorTypes)
 	}
 	if ta.Aliases != nil {
-		fmt.Printf("\tAlias: %v\n", ta.Aliases)
+		fmt.Printf("\talias: %v\n", ta.Aliases)
 	}
 
 	if ta.FirstSeen.Year() != 1 {
-		fmt.Printf("\tFirstSeen: %v\n", ta.FirstSeen)
+		fmt.Printf("\tfirst_seen: %v\n", ta.FirstSeen)
 	}
 	if ta.LastSeen.Year() != 1 {
-		fmt.Printf("\tLastSeen: %v\n", ta.LastSeen)
+		fmt.Printf("\tlast_seen: %v\n", ta.LastSeen)
 	}
 	if ta.Roles != nil {
-		fmt.Printf("\tRoles: %v\n", ta.Roles)
+		fmt.Printf("\troles: %v\n", ta.Roles)
 	}
 	if ta.Goals != nil {
-		fmt.Printf("\tGoals: %v\n", ta.Goals)
+		fmt.Printf("\tgoals: %v\n", ta.Goals)
 	}
 	if len(ta.Sophistication) > 0 {
-		fmt.Printf("\tSophistication: %v\n", ta.Sophistication)
+		fmt.Printf("\tsophistication: %v\n", ta.Sophistication)
 	}
 	if len(ta.ResourceLevel) > 0 {
-		fmt.Printf("\tResourceLevel: %v\n", ta.ResourceLevel)
+		fmt.Printf("\tresource_level: %v\n", ta.ResourceLevel)
 	}
 	if len(ta.PrimaryMotivation) > 0 {
-		fmt.Printf("\tPrimaryMotivation: %v\n", ta.PrimaryMotivation)
+		fmt.Printf("\tprimary_motivation: %v\n", ta.PrimaryMotivation)
 	}
 	if len(ta.SecondaryMotivations) > 0 {
-		fmt.Printf("\tSecondaryMotivations: %v\n", ta.SecondaryMotivations)
+		fmt.Printf("\tsecondary_motivations: %v\n", ta.SecondaryMotivations)
 	}
 	if len(ta.PersonalMotivations) > 0 {
-		fmt.Printf("\tPersonalMotivations: %v\n", ta.PersonalMotivations)
+		fmt.Printf("\tpersonal_motivations: %v\n", ta.PersonalMotivations)
 	}
 }

@@ -16,3 +16,19 @@ func main() {
 	data := readAll(os.Args[1])
 	unmarshal(data)
 }
+
+/**
+ * Need:
+ * go get github.com/neocortical/flexjson
+ *
+ * To run this:
+ *
+ * cd /home/student/go/src/kata
+ * 
+ * export GOPATH=/home/student/go
+ * export GOBIN=/home/student/go/bin
+ * export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))
+ * 
+ * go install
+ * kata {stix_file_name}
+ */
