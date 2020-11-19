@@ -1,0 +1,546 @@
+    1  ll
+    2  ssh-keygen
+    3  exit
+    4  cd cisc525/cisc-525-util/
+    5  ./stop-hadoop.bash 
+    6  ll .ssh
+    7  ll
+    8  cd
+    9  ll
+   10  ll .ssh
+   11  ssh student@student-virtualbox
+   12  ssh-copy-id student@student-virtualbox
+   13  ssh student@student-virtualbox
+   14  cd cisc525/cisc-525-util/
+   15  ./stop-hadoop.bash 
+   16  ./start-hadoop.bash 
+   17  jps
+   18  clear
+   19  history
+   20  hdfs dfs -ls /
+   21  cd
+   22  cd data
+   23  ll
+   24  mkdir data
+   25  cd data
+   26  git clone https://github.com/drkiettran/airline
+   27  git clone https://github.com/drkiettran/shakespeare
+   28  git clone https://github.com/drkiettran/COVID-19
+   29  git clone https://github.com/drkiettran/test_db
+   30  ll
+   31  tree
+   32  sudo apt install tree
+   33  tree
+   34  tree 2
+   35  tree -2
+   36  tree -L 2
+   37  tree -L 1
+   38  pwd
+   39  clear
+   40  ls
+   41  ll
+   42  cd ../cisc525/cisc-525-util/
+   43  vim prepare-hadoop-data.bash 
+   44  ./prepare-h
+   45  ./prepare-hadoop-data.bash 
+   46  ./verify-data.bash 
+   47  ll
+   48  vim ./prepare-hadoop-data.bash 
+   49  ./prepare-hadoop-data.bash 
+   50  ./verify-data.bash 
+   51  ll ~/data
+   52  vim ./prepare-hadoop-data.bash 
+   53  ./prepare-hadoop-data.bash 
+   54  ./verify-data.bash 
+   55  git reset --hard
+   56  git pull
+   57  clear
+   58  hdfs dfs -rm -rf /
+   59  hdfs dfs -rm -r /user
+   60  ll
+   61  ./prepare-hadoop-data.bash 
+   62  ./verify-data.bash 
+   63  ll
+   64  cd
+   65  cd data
+   66  hdfs dfs -copyFromLocal airline/1987.csv /user/student/airline
+   67  clear
+   68  cd
+   69  cd cisc525/
+   70  ll
+   71  git clone https://github.com/drkiettran/mapreduce
+   72  cd mapreduce/
+   73  ll
+   74  mvn clean package
+   75  ll ~
+   76  cd
+   77  ll
+   78  ll ..
+   79  ll
+   80  ls
+   81  ls Downloads/
+   82  mv Downloads/devtools tools
+   83  ls
+   84  lls tools
+   85  ll tools/
+   86  ll tools/postman/
+   87  mv Downloads/tools apps
+   88  ll
+   89  cd apps
+   90  ls
+   91  ll
+   92  mv ~/Downloads/apache-maven-3.6.3 maven
+   93  mvn -version
+   94  clear
+   95  rm -r maven/
+   96  ll
+   97  mv elk-7.6.1 elk
+   98  ll
+   99  sudo apt install maven
+  100  cd
+  101  cd cisc525/mapreduce/
+  102  mvn clean package
+  103  mvn clean -DskipTests package
+  104  yarn jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.WordCount /user/student/shakespeare/tragedy/othello.txt /tmp/othello
+  105  hadoop jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.WordCount /user/student/shakespeare/tragedy/othello.txt /tmp/othello
+  106  ll target
+  107  hadoop jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.WordCount /user/student/shakespeare/tragedy/othello.txt /tmp/othello
+  108  cd ../cisc-525-util/
+  109  ./stop-hadoop.bash 
+  110  jps
+  111  vim ./start-hadoop.bash 
+  112  /usr/local/hadoop/sbin/start-all.
+  113  /usr/local/hadoop/sbin/start-all.sh 
+  114  jps
+  115  clear
+  116  ./verify-data.bash 
+  117  clear
+  118  ls
+  119  hadoop jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.WordCount /user/student/shakespeare/tragedy/othello.txt /tmp/othello
+  120  cd ../mapreduce/
+  121  hadoop jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.WordCount /user/student/shakespeare/tragedy/othello.txt /tmp/othello
+  122  vim ~/.bashrc
+  123  exit
+  124  docker ps
+  125  sudo systemctl status docker
+  126  cd
+  127  sudo apt update
+  128  java -version
+  129  sudo apt install openjdk-8-jdk
+  130  java -version
+  131  javac -version
+  132  clear
+  133  ls
+  134  rm google-chrome-stable_current_amd64.deb 
+  135  ls
+  136  ls Downloads/
+  137  vim
+  138  sudo apt install vim
+  139  vim
+  140  python -V
+  141  python3 -V
+  142  go
+  143  sudo apt install go
+  144  sudo apt install golang
+  145  pip3
+  146  sudo apt install python3-pip
+  147  pip3
+  148  pip3 -v
+  149  pip3 -version
+  150  pip3 -v
+  151  pip3 -V
+  152  pip3 install notebook
+  153  sudo pip3 install notebook
+  154  jupyter notebook
+  155  ls
+  156  rm Untitled.ipynb 
+  157  ls
+  158  ll
+  159  j
+  160  cd Downloads/
+  161  l
+  162  sudo cp -R hadoop /usr/local/.
+  163  cd /usr/local
+  164  ll
+  165  sudo chown -R student:student hadoop/
+  166  ll
+  167  ll hadoop/
+  168  ll hadoop/etc/hadoop/
+  169  ls
+  170  cd
+  171  vim .bashrc
+  172  . .bashrc
+  173  clear
+  174  java -version
+  175  javac -version
+  176  ll
+  177  mkdir cisc525
+  178  cd cisc525/
+  179  git clone https://github.com/drkiettran/cisc-525-util
+  180  cd cisc-525-util/
+  181  ll
+  182  ./start-hadoop.bash 
+  183  ll
+  184  jps
+  185  sudo apt update
+  186  sudo apt install openssh-server
+  187  sudo systemctl status ssh
+  188  sudo ufw allow ssh
+  189  ./stop-hadoop.bash 
+  190  jps
+  191  ./start-hadoop.bash 
+  192  jps
+  193  ssh student@student-virtualbox
+  194  ssh-keygen
+  195  ssh student@student-virtualbox
+  196  exit
+  197  cd
+  198  cd data/test_db/sakila/
+  199  ls
+  200  mysql -h 172.17.0.2 -u student -ppassword < ./sakila-mv-schema.sql 
+  201  mysql -h 172.17.0.2 -u student -ppassword < ./sakila-mv-data.sql 
+  202  cd ..
+  203  cd
+  204  cd cisc525/sqoop/
+  205  sqoop import --connect jdbc:mysql://172.17.0.2:3306/sakila --username student --password password --table actor -m 1 --target-dir /user/student/sakila/actor
+  206  hdfs dfs -cat actor/part-m-00000
+  207  hdfs dfs -cat /user/student/sakila/actor/part-m-00000
+  208  cd /usr/local/hadoop/etc/hadoop/
+  209  vim yarn-site.xml 
+  210  vim mapred-site.xml 
+  211  env
+  212  env | grep COMMON
+  213  vim mapred-site.xml 
+  214  jps
+  215  kk
+  216  ll
+  217  vim hadoop-si
+  218  ls
+  219  ls *site
+  220  ls *site*
+  221  vim core-site.xml 
+  222  vim hdfs-site.xml 
+  223  cat yarn-site.xml 
+  224  vim yarn-site.xml 
+  225  fg
+  226  vim mapred-site.xml 
+  227  exit
+  228  hdfs dfs -ls /tmp
+  229  cat activemq-memory-hdfs.conf 
+  230  vim activemq-memory-hdfs.conf 
+  231  hdfs dfs -ls /tmp
+  232  hdfs dfs -ls /tmp/activemq.log
+  233  ll
+  234  ./grep_hdfs.bash 
+  235  ./grep_hdfs.bash /tmp/activemq.log test
+  236  cat grep_hdfs.bash 
+  237  ./grep_hdfs.bash /tmp/activemq.log -i test
+  238  cd ../custom_sink/
+  239  mvn clean package
+  240  cat readme.md 
+  241  exit
+  242  cd cisc525/mapreduce/
+  243  hadoop jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.WordCount /user/student/shakespeare/tragedy/othello.txt /tmp/othello /tmp/othello
+  244  sudo vim /etc/hosts
+  245  echo $HADOOP_HOME
+  246  hadoop jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.WordCount /user/student/shakespeare/tragedy/othello.txt /tmp/othello /tmp/othello
+  247  git pull
+  248  mvn clean package
+  249  hadoop jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.WordCount /user/student/shakespeare/tragedy/othello.txt /tmp/othello /tmp/othello
+  250  yarn jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.WordCount /user/student/shakespeare/tragedy/othello.txt /tmp/othello /tmp/othello
+  251  hadoop jar target/cisc-525-mapreduce-jar-with-dependencies.jar com.drkiettran.mapreduce.FlightsByCarriers /user/student/airline/1987.csv /tmp/1987
+  252  cd ..
+  253  git clone https://github.com/drkiettran/mapreduce-py
+  254  cd mapreduce-py/
+  255  ls
+  256  ./word_count_run.sh /user/student/shakespeare/tragedy/othello.txt /tmp/othello
+  257  ./fbc_run.sh /user/student/airline/1987.csv /tmp/1987
+  258  pip3 install pytest
+  259  pytest
+  260  cd
+  261  cd apps
+  262  ls
+  263  cd activemq/
+  264  ./bin/activemq start
+  265  vim .bashrc
+  266  cd
+  267  vim .bashrc
+  268  . .bashrc
+  269  cd apps/activemq/
+  270  ./bin/activemq start
+  271  cd lib/
+  272  cd ..
+  273  ll
+  274  cd data
+  275  ll
+  276  tail activemq.log
+  277  tail -f activemq.log
+  278  cd ../bin
+  279  ./activemq stop
+  280  vim ../conf/log4j.properties 
+  281  ./activemq start
+  282  tail ../data/activemq.log
+  283  tail -f ../data/activemq.log
+  284  ./activemq stop
+  285  docker exec -it mysql bash
+  286  sudo apt install mysql-client-core-5.7
+  287  sudo apt install mysql-client-c
+  288  mysql
+  289  sudo apt install mysql-client-core-8.0
+  290  docker exec -it mysql bash
+  291  docker inspect mysql | grep -i ipaddress
+  292  mysql -h 172.17.0.2 -u student -p
+  293  cd ..
+  294  cd data
+  295  ls
+  296  ls *log
+  297  rm acti*log*
+  298  ll
+  299  cd ../bin
+  300  ./activemq start
+  301  tail -f ../data/activemq.log
+  302  ./activemq stop
+  303  ll
+  304  cd ..
+  305  ll
+  306  cd ..
+  307  ll
+  308  clear
+  309  cd
+  310  cd tools/goland/
+  311  ./bin/goland.sh 
+  312  cd
+  313  ll
+  314  clear
+  315  mkdir kata
+  316  cd kata
+  317  mkdir golang
+  318  cd golang
+  319  ll
+  320  go
+  321  go version
+  322  cd
+  323  cd go/src/
+  324  ls
+  325  cd kata
+  326  ls
+  327  go help
+  328  go run helloworld.go 
+  329  ll
+  330  ls
+  331  go build helloworld.go 
+  332  ls
+  333  ./helloworld 
+  334  go help build
+  335  go run helloworld.go 
+  336  env | grep -i go
+  337  export GOPATH=home/student/go
+  338  cd
+  339  cd go/src/kata/
+  340  go build helloworld
+  341  go build helloworld.go
+  342  go help gopath
+  343  echo $GOPATH
+  344  $GOPATH/bin/go
+  345  $GOPATH/bin
+  346  ls $GOPATH/bin
+  347  ls $GOPATH
+  348  export GOPATH=/home/student/go
+  349  go build helloworld.go
+  350  ls ~/go/bin
+  351  ll ~/go/bin
+  352  ll
+  353  cd ..
+  354  cd /tmp
+  355  git clone https://github.com/freetaxii/libstix2
+  356  vd libstix2/
+  357  cd libstix2/
+  358  find . -name "*.go" | xargs grep -i rawmessage
+  359  find . -name "*.go" | xargs grep -i objects
+  360  vim examples/stix/02-bundle.go 
+  361  find . -name "*.go" | xargs grep -i marshal
+  362  find . -name "*.go" | xargs grep -i unmarshal
+  363  cd
+  364  cd go/src/kata/
+  365  ls
+  366  go run bundle.go 
+  367  go build *.go
+  368  l
+  369  go build fileutil.go
+  370  go help
+  371  go build bundle.go
+  372  go install fileutil.go 
+  373  export GOBIN=/home/student/go/bin
+  374  go install fileutil.go 
+  375  ls
+  376  go install bundle.go
+  377  cd ..
+  378  ls
+  379  mkdir examples
+  380  cd examples
+  381  env
+  382  mkdir hello
+  383  cd hello
+  384  go mod init exaple.com/user/hello
+  385  ls
+  386  ll
+  387  cat go.mod 
+  388  vim hello.go
+  389  go install example.com/user/hello
+  390  cd
+  391  ls
+  392  cd go/src
+  393  ls
+  394  go mod init exaple.com/user/hello
+  395  cd ../examples/
+  396  dir
+  397  cd hello/
+  398  ls
+  399  vim hello.go 
+  400  vim go.mod 
+  401  go install example.com/user/hello
+  402  ll
+  403  ll ~/go/bin
+  404  go env -u GOBIN
+  405  go env -w GOBIN=/home/student/go/bin
+  406  go env -u GOBIN
+  407  go env -w GOBIN=/home/student/go/bin
+  408  go install .
+  409  export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))
+  410  hello
+  411  cd
+  412  cd go/src
+  413  ls
+  414  rm go.mod
+  415  ls
+  416  cd kata
+  417  go mod trankiet.com/kata
+  418  go mod init trankiet.com/kata
+  419  ll
+  420  vim bundle.go
+  421  go install trankiet.com/kata
+  422  cd
+  423  cd go
+  424  ls
+  425  cd examples/
+  426  dir
+  427  cd hello/
+  428  dir
+  429  vim print.go
+  430  cp hello.go print.go
+  431  vim print.go 
+  432  go install
+  433  vim print.go 
+  434  go install
+  435  vim hello.go 
+  436  go install
+  437  hello
+  438  cat go.mod 
+  439  cat print.go 
+  440  cd ../../src/kata
+  441  go install
+  442  bundle
+  443  ll
+  444  ll ../../bin
+  445  kata
+  446  go install
+  447  kata
+  448  go install
+  449  kata
+  450  ll
+  451  kata ./identify_threat_actor.json 
+  452  go install
+  453  kata ./identify_threat_actor.json 
+  454  go install
+  455  kata ./identify_threat_actor.json 
+  456  go install
+  457  kata ./identify_threat_actor.json 
+  458  go install
+  459  kata
+  460  kata ./identify_threat_actor.json 
+  461  kata ./identify_threat_actor.jsonlll
+  462  go install
+  463  kata ./identify_threat_actor.jsonlll
+  464  kata ./identify_threat_actor.jsonl
+  465  kata ./identify_threat_actor.json
+  466  go install
+  467  kata ./identify_threat_actor.json
+  468  go install
+  469  kata ./identify_threat_actor.json
+  470  go install
+  471  kata ./identify_threat_actor.json
+  472  go install
+  473  kata ./identify_threat_actor.json
+  474  go install
+  475  kata ./identify_threat_actor.json
+  476  go install
+  477  kata ./identify_threat_actor.json
+  478  go install
+  479  kata ./identify_threat_actor.json
+  480  go install
+  481  kata ./identify_threat_actor.json
+  482  go install
+  483  kata ./identify_threat_actor.json
+  484  go install
+  485  kata ./identify_threat_actor.json
+  486  go install
+  487  kata ./identify_threat_actor.json
+  488  go install
+  489  kata ./identify_threat_actor.json
+  490  go install
+  491  kata ./identify_threat_actor.json
+  492  go install
+  493  kata ./identify_threat_actor.json
+  494  go install
+  495  kata ./identify_threat_actor.json
+  496  go install
+  497  kata ./identify_threat_actor.json
+  498  go install
+  499  kata ./identify_threat_actor.json
+  500  go install
+  501  kata ./identify_threat_actor.json
+  502  go get github.com/neocortical/flexjson
+  503  go install
+  504  go get github.com/neocortical/flexjson
+  505  kata ./identify_threat_actor.json
+  506  go get github.com/neocortical/flexjson
+  507  go install
+  508  kata ./identify_threat_actor.json
+  509  go install
+  510  kata ./identify_threat_actor.json
+  511  go install
+  512  kata ./identify_threat_actor.json
+  513  go install
+  514  kata ./identify_threat_actor.json
+  515  go install
+  516  kata ./identify_threat_actor.json
+  517  go install
+  518  kata ./identify_threat_actor.json
+  519  go install
+  520  kata ./identify_threat_actor.json
+  521  go install
+  522  kata ./identify_threat_actor.json
+  523  go install
+  524  kata ./identify_threat_actor.json
+  525  go install
+  526  kata ./identify_threat_actor.json
+  527  cd
+  528  cd go/bin
+  529  ls
+  530  ll
+  531  ll go_build_helloworld_go 
+  532  cat go_build_helloworld_go 
+  533  ll
+  534  cd ../src/kata/
+  535  ls
+  536  cat helloworld.go 
+  537  go build help
+  538  go build -help
+  539  go build -h
+  540  go help build
+  541  go help
+  542  cd
+  543  cd go/src/kata/
+  544  ls
+  545  history
+  546  history > go-cmds.txt
