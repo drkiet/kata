@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type Identity struct {
 	CommonProperties STIXObject
@@ -29,4 +32,9 @@ func printIdentity(id Identity) {
 	if len(id.ContactInformation) > 0 {
 		fmt.Printf("\tcontact_information: %vn", id.ContactInformation)
 	}
+}
+
+func unmarshalIdentity(obj json.RawMessage) (identity Identity) {
+	json.Unmarshal(obj, &identity)
+	return identity
 }

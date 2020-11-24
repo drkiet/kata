@@ -14,7 +14,9 @@ func main() {
 		os.Exit(-1)
 	}
 	data := readAll(os.Args[1])
-	unmarshal(data)
+	bundle := unmarshal(data)
+	fmt.Println("marshaling bundle.")
+	fmt.Println(marshal(bundle))
 }
 
 /**

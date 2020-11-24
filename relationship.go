@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"time"
 )
@@ -30,4 +31,9 @@ func printRelationship(rel Relationship) {
 	if rel.StopTime.Year() != 1 {
 		fmt.Printf("\tstop_time: %v\n", rel.StopTime)
 	}
+}
+
+func unmarshalRelationship(obj json.RawMessage) (relationship Relationship) {
+	json.Unmarshal(obj, &relationship)
+	return relationship
 }

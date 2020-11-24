@@ -22,7 +22,13 @@ func printBundle(bundle Bundle) {
 	fmt.Printf("\tid: %v\n", bundle.ID)
 }
 
-func unmarshal(data []byte) {
+func marshal(bundle Bundle) (jsonData string){
+	data, e := json.MarshalIndent(bundle, "", "  ")
+	check(e)
+	return string(data)
+}
+
+func unmarshal(data []byte) (bundle Bundle) {
 	bundle = Bundle{}
 	e := json.Unmarshal(data, &bundle)
 	fmt.Printf("e: %v\n", e)
@@ -36,22 +42,19 @@ func unmarshal(data []byte) {
 		printStixObject(stixObject)
 		switch stixObject.Type{
 		case ThreatActorType:
-			var ta ThreatActor
-			json.Unmarshal(obj, &ta)
+			ta := unmarshalThreatActor(obj)
 			ta.CommonProperties = stixObject
 			printThreatActor(ta)
 		case IdentityType:
-			var identity Identity
-			json.Unmarshal(obj, &identity)
+			identity := unmarshalIdentity(obj)
 			identity.CommonProperties = stixObject
 			printIdentity(identity)
 		case RelationshipType:
-			var relationship Relationship
-			json.Unmarshal(obj, &relationship)
+			relationship := unmarshalRelationship(obj)
 			relationship.CommonProperties = stixObject
 			printRelationship(relationship)
 		}
-
 	}
+	return bundle
 }
 

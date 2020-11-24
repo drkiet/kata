@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"time"
 )
@@ -62,4 +63,9 @@ func printThreatActor(ta ThreatActor) {
 	if len(ta.PersonalMotivations) > 0 {
 		fmt.Printf("\tpersonal_motivations: %v\n", ta.PersonalMotivations)
 	}
+}
+
+func unmarshalThreatActor(obj json.RawMessage) (ta ThreatActor) {
+	json.Unmarshal(obj, &ta)
+	return ta
 }
