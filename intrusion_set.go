@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-type ThreatActor struct {
+type IntrusionSet struct {
 	Type string `json:"type" binding:"required"`
 	SpecVersion string `json:"spec_version", binding:"required"`
 	ID string `json:"id" binding:"required"`
@@ -22,31 +22,26 @@ type ThreatActor struct {
 	GranularMarkings [] GranularMarking `json:"granular-markings,omitempty"`
 
 	Name string `json:"name" binding:"required"`
-	Description string `json:"description,omitempty"`
-	ThreatActorTypes [] string `json:"threat_actor_types" binding:"required"`
+	Description string `json:"description, omitempty"`
 	Aliases [] string `json:"aliases,omitempty"`
 	FirstSeen time.Time `json:"first_seen,omitempty"`
-	LastSeen time.Time `json:"last_seen,omitempty"`
-	Roles [] string `json:"roles,omitempty"`
-	Goals [] string `json:"goals,omitempty"`
-	Sophistication string `json:"sophistication,omitempty"`
-	ResourceLevel string `json:"resource_level,omitempty"`
-	PrimaryMotivation string `json:"primary_motivation,omitempty"`
-	SecondaryMotivations string `json:"secondary_motivations,omitempty"`
-	PersonalMotivations string `json:"personal_motivations,omitempty"`
+	Goals []string `json:"goals, omitempty"`
+	ResourceLevel OpenVocab `json:"resource_level,omitempty"`
+	PrimaryMotivation OpenVocab `json:"primary_motivation,omitempty"`
+	SecondaryMotivation OpenVocab `json:"secondary_motivation,omitempty"`
 }
 
-func printThreatActor(ta ThreatActor) {
-	fmt.Println("Threat Actor:\n", marshalThreatActor(ta))
+func unmarshalIntrusionSet(obj json.RawMessage) (intrusionSet IntrusionSet) {
+	json.Unmarshal(obj, &intrusionSet)
+	return intrusionSet
 }
 
-func marshalThreatActor(threatActor ThreatActor) (jsonData string){
-	data, e := json.MarshalIndent(threatActor, "", "  ")
+func marshalIntrusionSet(intrusionSet IntrusionSet) (jsonData string){
+	data, e := json.MarshalIndent(intrusionSet, "", "  ")
 	check(e)
 	return string(data)
 }
 
-func unmarshalThreatActor(obj json.RawMessage) (ta ThreatActor) {
-	json.Unmarshal(obj, &ta)
-	return ta
+func printIntrusionSet(intrusionSet IntrusionSet) {
+	fmt.Println("Intrusion Set:\n", marshalIntrusionSet(intrusionSet))
 }

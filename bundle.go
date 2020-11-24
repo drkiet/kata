@@ -17,12 +17,7 @@ func init() {
 	fmt.Println("initializing ...")
 }
 
-func printBundle(bundle Bundle) {
-	fmt.Printf("\ttype: %v\n", bundle.Type)
-	fmt.Printf("\tid: %v\n", bundle.ID)
-}
-
-func marshal(bundle Bundle) (jsonData string){
+func marshalBundle(bundle Bundle) (jsonData string){
 	data, e := json.MarshalIndent(bundle, "", "  ")
 	check(e)
 	return string(data)
@@ -34,25 +29,30 @@ func unmarshal(data []byte) (bundle Bundle) {
 	fmt.Printf("e: %v\n", e)
 	check(e)
 
-	printBundle(bundle)
-
 	for _, obj := range bundle.Objects {
 		var stixObject STIXObject
 		json.Unmarshal(obj, &stixObject)
-		printStixObject(stixObject)
 		switch stixObject.Type{
 		case ThreatActorType:
 			ta := unmarshalThreatActor(obj)
-			ta.CommonProperties = stixObject
 			printThreatActor(ta)
 		case IdentityType:
 			identity := unmarshalIdentity(obj)
-			identity.CommonProperties = stixObject
 			printIdentity(identity)
 		case RelationshipType:
 			relationship := unmarshalRelationship(obj)
-			relationship.CommonProperties = stixObject
 			printRelationship(relationship)
+		case AttackPatternType:
+			ap := unmarshalAttackPattern(obj)
+			printAttackPattern(ap)
+		case CampaignType:
+			campaign := unmarshalCampaign(obj)
+			printCampaign(campaign)
+		case IntrusionSetType:
+			is := unmarshalIntrusionSet(obj)
+			printIntrusionSet(is)
+		default:
+			fmt.Printf("\n** Unknown object %v ***\n", stixObject.Type)
 		}
 	}
 	return bundle

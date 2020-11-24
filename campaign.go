@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-type Relationship struct {
+type Campaign struct {
 	Type string `json:"type" binding:"required"`
 	SpecVersion string `json:"spec_version", binding:"required"`
 	ID string `json:"id" binding:"required"`
@@ -21,25 +21,26 @@ type Relationship struct {
 	ObjectMarkingRefs []string `json:"object_marking_refs,omitempty"`
 	GranularMarkings [] GranularMarking `json:"granular-markings,omitempty"`
 
-	RelationshipType string `json:"relationship_type" binding:"required"`
-	Description string `json:"description,omitempty"`
-	SourceRef string `json:"source_ref" binding:"required"`
-	TargetRef string `json:"target_ref" binding:"required"`
-	StartTime time.Time `json:"start_time,omitempty"`
-	StopTime time.Time `json:"stop_time,omitempty"`
+	Name string `json:"name" binding:"required"`
+	Description string `json:"description, omitempty"`
+	Aliases [] string `json:"aliases,omitempty"`
+	FirstSeen time.Time `json:"first_seen,omitempty"`
+	LastSeen time.Time `json:"last_seen,omitempty"`
+	Objective string `json:"objective,omitempty"`
 }
 
-func unmarshalRelationship(obj json.RawMessage) (relationship Relationship) {
-	json.Unmarshal(obj, &relationship)
-	return relationship
+
+func unmarshalCampaign(obj json.RawMessage) (campaign Campaign) {
+	json.Unmarshal(obj, &campaign)
+	return campaign
 }
 
-func marshalRelationship(relationship Relationship) (jsonData string){
-	data, e := json.MarshalIndent(relationship, "", "  ")
+func marshalCampaign(campaign Campaign) (jsonData string){
+	data, e := json.MarshalIndent(campaign, "", "  ")
 	check(e)
 	return string(data)
 }
 
-func printRelationship(relationship Relationship) {
-	fmt.Println("Relationship:\n", marshalRelationship(relationship))
+func printCampaign(campaign Campaign) {
+	fmt.Println("Campaign:\n", marshalCampaign(campaign))
 }

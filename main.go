@@ -15,8 +15,8 @@ func main() {
 	}
 	data := readAll(os.Args[1])
 	bundle := unmarshal(data)
-	fmt.Println("marshaling bundle.")
-	fmt.Println(marshal(bundle))
+	jsonData := marshalBundle(bundle)
+	fmt.Printf("Bundle:%v\n", jsonData)
 }
 
 /**
