@@ -51,6 +51,12 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case IntrusionSetType:
 			is := unmarshalIntrusionSet(obj)
 			printIntrusionSet(is)
+		case IndicatorType:
+			indicator := unmarshalIndicator(obj)
+			printIndicator(indicator)
+		case MalwareType:
+			malware := unmarshalMalware(obj)
+			printMalware(malware)
 		default:
 			fmt.Printf("\n** Unknown object %v ***\n", stixObject.Type)
 		}

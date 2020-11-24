@@ -102,8 +102,8 @@ type GranularMarking struct {
 }
 
 type KillChainPhase struct {
-	KillChainName string
-	PhaseName     string
+	KillChainName string `json:"kill_chain_name"`
+	PhaseName     string `json:"phase_name"`
 }
 
 // New type
