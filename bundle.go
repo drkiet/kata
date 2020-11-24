@@ -57,6 +57,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case MalwareType:
 			malware := unmarshalMalware(obj)
 			printMalware(malware)
+		case SightingType:
+			sighting := unmarshalSighting(obj)
+			printSighting(sighting)
 		default:
 			fmt.Printf("\n** Unknown object %v ***\n", stixObject.Type)
 		}
