@@ -19,7 +19,7 @@ type Indicator struct {
 	Lang string `json:"lang,omitempty"`
 	ExternalReferences []ExternalReference `json:"external_references,omitempty"`
 	ObjectMarkingRefs []string `json:"object_marking_refs,omitempty"`
-	GranularMarkings [] GranularMarking `json:"granular-markings,omitempty"`
+	GranularMarkings [] GranularMarking `json:"granular_markings,omitempty"`
 
 	Name string `json:"name, omitempty"`
 	Description string `json:"description, omitempty"`

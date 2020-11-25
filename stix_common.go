@@ -96,8 +96,8 @@ type STIXObject struct {
 }
 
 type GranularMarking struct {
-	Lang string `json:"lang"`
-	MarkingRef string `json:"marking-ref, omitempty"`
+	Lang string `json:"lang,omitempty"`
+	MarkingRef string `json:"marking_ref, omitempty"`
 	Selectors []string `json:"selectors" binding:"required"`
 }
 

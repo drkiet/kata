@@ -65,7 +65,7 @@ func unmarshal(data []byte) (bundle Bundle) {
 			od := unmarshalObservedData(obj)
 			printObservedData(od)
 
-		// SCO
+		// Markings
 		case MarkingDefinitionType:
 			md := unmarshalMarkingDefinition(obj)
 			printMarkingDefinition(md)
