@@ -33,6 +33,7 @@ func unmarshal(data []byte) (bundle Bundle) {
 		var stixObject STIXObject
 		json.Unmarshal(obj, &stixObject)
 		switch stixObject.Type{
+		// SDO
 		case ThreatActorType:
 			ta := unmarshalThreatActor(obj)
 			printThreatActor(ta)
@@ -63,6 +64,12 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case ObservedDataType:
 			od := unmarshalObservedData(obj)
 			printObservedData(od)
+
+		// SCO
+		case MarkingDefinitionType:
+			md := unmarshalMarkingDefinition(obj)
+			printMarkingDefinition(md)
+
 		default:
 			fmt.Printf("\n** Unknown object %v ***\n", stixObject.Type)
 		}
