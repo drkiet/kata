@@ -60,6 +60,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case SightingType:
 			sighting := unmarshalSighting(obj)
 			printSighting(sighting)
+		case ObservedDataType:
+			od := unmarshalObservedData(obj)
+			printObservedData(od)
 		default:
 			fmt.Printf("\n** Unknown object %v ***\n", stixObject.Type)
 		}
