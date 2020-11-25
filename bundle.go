@@ -76,6 +76,24 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case VulnerabilityType:
 			vul := unmarshalVulnerability(obj)
 			printVulnerability(vul)
+		case GroupingType:
+			grouping := unmarshalGrouping(obj)
+			printGrouping(grouping)
+		case InfrastructureType:
+			infra := unmarshalInfrastructure(obj)
+			printInfrastructure(infra)
+		case LocationType:
+			loc := unmarshalLocation(obj)
+			printLocation(loc)
+		case MalwareAnalysisType:
+			ma := unmarshalMalwareAnalysis(obj)
+			printMalwareAnalysis(ma)
+		case NoteType:
+			note := unmarshalNote(obj)
+			printNote(note)
+		case OpinionType:
+			opinion := unmarshalOpinion(obj)
+			printOpinion(opinion)
 
 		// Markings
 		case MarkingDefinitionType:
