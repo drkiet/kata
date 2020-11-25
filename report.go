@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-type Identity struct {
+type Report struct {
 	Type string `json:"type" binding:"required"`
 	SpecVersion string `json:"spec_version" binding:"required"`
 	ID string `json:"id" binding:"required"`
@@ -19,27 +19,27 @@ type Identity struct {
 	Lang string `json:"lang,omitempty"`
 	ExternalReferences []ExternalReference `json:"external_references,omitempty"`
 	ObjectMarkingRefs []string `json:"object_marking_refs,omitempty"`
-	GranularMarkings [] GranularMarking `json:"granular-markings,omitempty"`
+	GranularMarkings [] GranularMarking `json:"granular_markings,omitempty"`
 
 	Name string `json:"name" binding:"required"`
 	Description string `json:"description,omitempty"`
-	Roles [] string `json:"roles,omitempty"`
-	IdentityClass OpenVocab `json:"identity_class" binding:"required"`
-	Sectors [] OpenVocab `json:"sectors,omitempty"`
-	ContactInformation string `json:"contact_information,omitempty"`
+	ReportTypes []OpenVocab `json:"report_types" binding:"required"`
+	Published time.Time `json:"published" binding:"required"`
+	ObjectRefs []string `json:"object_refs" binding:"required"`
+
 }
 
-func printIdentity(id Identity) {
-	fmt.Println("Identity:\n", marshalIdentity(id))
+func unmarshalReport(obj json.RawMessage) (report Report) {
+	json.Unmarshal(obj, &report)
+	return report
 }
 
-func marshalIdentity(identity Identity) (jsonData string){
-	data, e := json.MarshalIndent(identity, "", "  ")
+func marshalReport(report Report) (jsonData string){
+	data, e := json.MarshalIndent(report, "", "  ")
 	check(e)
 	return string(data)
 }
 
-func unmarshalIdentity(obj json.RawMessage) (identity Identity) {
-	json.Unmarshal(obj, &identity)
-	return identity
+func printReport(report Report) {
+	fmt.Println("Report:\n", marshalReport(report))
 }

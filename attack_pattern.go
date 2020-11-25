@@ -8,11 +8,11 @@ import (
 
 type AttackPattern struct {
 	Type string `json:"type" binding:"required"`
-	SpecVersion string `json:"spec_version", binding:"required"`
+	SpecVersion string `json:"spec_version" binding:"required"`
 	ID string `json:"id" binding:"required"`
 	CreatedByRef string `json:"created-by-ref,omitempty"`
-	Created time.Time `json:"created" binding="required"`
-	Modified time.Time `json:"modified" binding="required"`
+	Created time.Time `json:"created" binding:"required"`
+	Modified time.Time `json:"modified" binding:"required"`
 	Revoked bool `json:"revoked,omitempty"`
 	Labels []string `json:"labels,omitempty"`
 	Confidence int `json:"confidence,omitempty"`
@@ -20,8 +20,6 @@ type AttackPattern struct {
 	ExternalReferences []ExternalReference `json:"external_references,omitempty"`
 	ObjectMarkingRefs []string `json:"object_marking_refs,omitempty"`
 	GranularMarkings [] GranularMarking `json:"granular-markings,omitempty"`
-	//Defanged bool `json:"defanged"`
-	//Extensions map[string]interface{} `json:"extensions"`
 
 	Name string `json:"name" binding:"required"`
 	Description string `json:"description,omitempty"`

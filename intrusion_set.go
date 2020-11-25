@@ -8,11 +8,11 @@ import (
 
 type IntrusionSet struct {
 	Type string `json:"type" binding:"required"`
-	SpecVersion string `json:"spec_version", binding:"required"`
+	SpecVersion string `json:"spec_version" binding:"required"`
 	ID string `json:"id" binding:"required"`
 	CreatedByRef string `json:"created-by-ref,omitempty"`
-	Created time.Time `json:"created" binding="required"`
-	Modified time.Time `json:"modified" binding="required"`
+	Created time.Time `json:"created" binding:"required"`
+	Modified time.Time `json:"modified" binding:"required"`
 	Revoked bool `json:"revoked,omitempty"`
 	Labels []string `json:"labels,omitempty"`
 	Confidence int `json:"confidence,omitempty"`
@@ -22,10 +22,10 @@ type IntrusionSet struct {
 	GranularMarkings [] GranularMarking `json:"granular-markings,omitempty"`
 
 	Name string `json:"name" binding:"required"`
-	Description string `json:"description, omitempty"`
+	Description string `json:"description,omitempty"`
 	Aliases [] string `json:"aliases,omitempty"`
 	FirstSeen time.Time `json:"first_seen,omitempty"`
-	Goals []string `json:"goals, omitempty"`
+	Goals []string `json:"goals,omitempty"`
 	ResourceLevel OpenVocab `json:"resource_level,omitempty"`
 	PrimaryMotivation OpenVocab `json:"primary_motivation,omitempty"`
 	SecondaryMotivation OpenVocab `json:"secondary_motivation,omitempty"`

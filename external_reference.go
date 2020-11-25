@@ -7,10 +7,10 @@ import (
 
 type ExternalReference struct {
 	SourceName string `json:"source_name" binding:"required"`
-	Description string `json:"description"`
-	Url         string `json:"url"`
-	Hashes      map[string]interface{} `json:"hashes"`
-	ExternalID  string `json:"external_id"`
+	Description string `json:"description,omitempty"`
+	Url         string `json:"url,omitempty"`
+	Hashes      map[string]interface{} `json:"hashes,omitempty"`
+	ExternalID  string `json:"external_id,omitempty"`
 }
 
 func unmarshalExternalReference(obj json.RawMessage) (externalReference ExternalReference) {

@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-type Identity struct {
+type Tool struct {
 	Type string `json:"type" binding:"required"`
 	SpecVersion string `json:"spec_version" binding:"required"`
 	ID string `json:"id" binding:"required"`
@@ -19,27 +19,27 @@ type Identity struct {
 	Lang string `json:"lang,omitempty"`
 	ExternalReferences []ExternalReference `json:"external_references,omitempty"`
 	ObjectMarkingRefs []string `json:"object_marking_refs,omitempty"`
-	GranularMarkings [] GranularMarking `json:"granular-markings,omitempty"`
+	GranularMarkings [] GranularMarking `json:"granular_markings,omitempty"`
 
 	Name string `json:"name" binding:"required"`
 	Description string `json:"description,omitempty"`
-	Roles [] string `json:"roles,omitempty"`
-	IdentityClass OpenVocab `json:"identity_class" binding:"required"`
-	Sectors [] OpenVocab `json:"sectors,omitempty"`
-	ContactInformation string `json:"contact_information,omitempty"`
+	ToolTypes []OpenVocab `json:"tool_types" binding:"required"`
+	Aliases []string `json:"aliases,omitempty"`
+	KillChainPhases []KillChainPhase `json:"kill_chain_phases,omitempty"`
+	ToolVersion string `json:"tool_version,omitempty"`
 }
 
-func printIdentity(id Identity) {
-	fmt.Println("Identity:\n", marshalIdentity(id))
+func unmarshalTool(obj json.RawMessage) (tool Tool) {
+	json.Unmarshal(obj, &tool)
+	return tool
 }
 
-func marshalIdentity(identity Identity) (jsonData string){
-	data, e := json.MarshalIndent(identity, "", "  ")
+func marshalTool(tool Tool) (jsonData string){
+	data, e := json.MarshalIndent(tool, "", "  ")
 	check(e)
 	return string(data)
 }
 
-func unmarshalIdentity(obj json.RawMessage) (identity Identity) {
-	json.Unmarshal(obj, &identity)
-	return identity
+func printTool(tool Tool) {
+	fmt.Println("Tool:\n", marshalTool(tool))
 }

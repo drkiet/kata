@@ -64,6 +64,18 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case ObservedDataType:
 			od := unmarshalObservedData(obj)
 			printObservedData(od)
+		case ToolType:
+			tool := unmarshalTool(obj)
+			printTool(tool)
+		case ReportType:
+			report := unmarshalReport(obj)
+			printReport(report)
+		case CourseOfActionType:
+			coa := unmarshalCourseOfAction(obj)
+			printCourseOfAction(coa)
+		case VulnerabilityType:
+			vul := unmarshalVulnerability(obj)
+			printVulnerability(vul)
 
 		// Markings
 		case MarkingDefinitionType:

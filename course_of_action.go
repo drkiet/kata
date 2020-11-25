@@ -1,12 +1,13 @@
 package main
 
 import (
+	"encoding/binary"
 	"encoding/json"
 	"fmt"
 	"time"
 )
 
-type Identity struct {
+type CourseOfAction struct {
 	Type string `json:"type" binding:"required"`
 	SpecVersion string `json:"spec_version" binding:"required"`
 	ID string `json:"id" binding:"required"`
@@ -23,23 +24,24 @@ type Identity struct {
 
 	Name string `json:"name" binding:"required"`
 	Description string `json:"description,omitempty"`
-	Roles [] string `json:"roles,omitempty"`
-	IdentityClass OpenVocab `json:"identity_class" binding:"required"`
-	Sectors [] OpenVocab `json:"sectors,omitempty"`
-	ContactInformation string `json:"contact_information,omitempty"`
+	ActionType OpenVocab `json:"action_type,omitempty"`
+	OsExecutionEnvs []string `json:"os_execution_envs,omitempty"`
+	ActionBin binary.ByteOrder `json:"action_bin,omitempty"`
+	ActionReference ExternalReference `json:"action_reference,omitempty"`
 }
 
-func printIdentity(id Identity) {
-	fmt.Println("Identity:\n", marshalIdentity(id))
+
+func unmarshalCourseOfAction(obj json.RawMessage) (courseOfAction CourseOfAction) {
+	json.Unmarshal(obj, &courseOfAction)
+	return courseOfAction
 }
 
-func marshalIdentity(identity Identity) (jsonData string){
-	data, e := json.MarshalIndent(identity, "", "  ")
+func marshalCourseOfAction(courseOfAction CourseOfAction) (jsonData string){
+	data, e := json.MarshalIndent(courseOfAction, "", "  ")
 	check(e)
 	return string(data)
 }
 
-func unmarshalIdentity(obj json.RawMessage) (identity Identity) {
-	json.Unmarshal(obj, &identity)
-	return identity
+func printCourseOfAction(courseOfAction CourseOfAction) {
+	fmt.Println("Course Of Action:\n", marshalCourseOfAction(courseOfAction))
 }
