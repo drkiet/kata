@@ -25,6 +25,9 @@ func marshalBundle(bundle Bundle) (jsonData string){
 
 func unmarshal(data []byte) (bundle Bundle) {
 	bundle = Bundle{}
+	if bundle.Type != BundleType {
+		fmt.Println("Unexpected bundle type ...")
+	}
 	e := json.Unmarshal(data, &bundle)
 	fmt.Printf("e: %v\n", e)
 	check(e)
@@ -95,7 +98,11 @@ func unmarshal(data []byte) (bundle Bundle) {
 			opinion := unmarshalOpinion(obj)
 			printOpinion(opinion)
 
+
 		// Markings
+		case LanguageContentType:
+			lc := unmarshalLanguageContent(obj)
+			printLanguageContent(lc)
 		case MarkingDefinitionType:
 			md := unmarshalMarkingDefinition(obj)
 			printMarkingDefinition(md)

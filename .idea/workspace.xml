@@ -11,12 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fb7623d-3ec5-4eec-800a-6b73d7a0e769" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/imddos.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grouping.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/location.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/note.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/opinion.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/language_content.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bundle.go" beforeDir="false" afterPath="$PROJECT_DIR$/bundle.go" afterDir="false" />
     </list>
@@ -327,7 +322,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/bundle.go</url>
-          <line>64</line>
+          <line>67</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
