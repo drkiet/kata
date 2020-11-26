@@ -129,7 +129,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case MACAddressType:
 			mac := unmarshalMacAddress(obj)
 			printMacAddress(mac)
-
+		case MutexType:
+			mutex := unmarshalMutex(obj)
+			printMutex(mutex)
 
 		// Markings
 		case LanguageContentType:

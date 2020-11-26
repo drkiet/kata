@@ -24,8 +24,9 @@
         "file--90bd400b-89a5-51a5-b17d-55bc7719723b",
         "file--5a27d487-c542-5f97-a131-a8866b477b46",
         "ipv6-addr--1e61d36c-a16c-53b7-a80f-2a00161c96b1",
-        "ipv6-addr--5daf7456-8863-5481-9d42-237d477697f4"
-
+        "ipv6-addr--5daf7456-8863-5481-9d42-237d477697f4",
+        "mac-addr--65cfcf98-8a6e-5a1b-8f61-379ac4f92d00",
+        "mutex--eba44954-d4e4-5d3b-814c-2b17dd8de300"
       ]
     },
     {
@@ -131,6 +132,12 @@
       "spec_version": "2.1",
       "id": "mac-addr--65cfcf98-8a6e-5a1b-8f61-379ac4f92d00",
       "value": "d2:fb:49:24:37:18"
+    },
+    {
+      "type": "mutex",
+      "spec_version": "2.1",
+      "id": "mutex--eba44954-d4e4-5d3b-814c-2b17dd8de300",
+      "name": "__CLEANSWEEP__"
     }
   ]
 }
