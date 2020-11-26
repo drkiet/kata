@@ -102,6 +102,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case ArtifactType:
 			artifact := unmarshalArtifact(obj)
 			printArtifact(artifact)
+		case AutonomousSystemType:
+			as := unmarshalAutonomousSystem(obj)
+			printAutonomousSystem(as)
 		case IPv4AddressType:
 			ipv4 := unmarshalIpV4Address(obj)
 			printIpV4Address(ipv4)

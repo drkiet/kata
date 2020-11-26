@@ -50,7 +50,7 @@ const VulnerabilityType = "vulnerability"
 
 // SCO
 const ArtifactType = "artifact"
-const ASType = "as"
+const AutonomousSystemType = "autonomous-system"
 const DirectoryType = "directory"
 const DomainNameType = "domain-name"
 const EmailAddressType = "email-address"
