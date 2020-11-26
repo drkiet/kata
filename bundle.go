@@ -105,6 +105,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case AutonomousSystemType:
 			as := unmarshalAutonomousSystem(obj)
 			printAutonomousSystem(as)
+		case DirectoryType:
+			dir := unmarshalDirectory(obj)
+			printDirectory(dir)
 		case IPv4AddressType:
 			ipv4 := unmarshalIpV4Address(obj)
 			printIpV4Address(ipv4)

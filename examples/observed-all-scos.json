@@ -17,7 +17,8 @@
         "domain-name--ecb120bf-2694-4902-a737-62b74539a41b",
         "artifact--ca17bcf8-9846-5ab4-8662-75c1bf6e63ee",
         "artifact--6f437177-6e48-5cf8-9d9e-872a2bddd641",
-        "autonomous-system--f720c34b-98ae-597f-ade5-27dc241e8c74"
+        "autonomous-system--f720c34b-98ae-597f-ade5-27dc241e8c74",
+        "directory--93c0a9b0-520d-545d-9094-1a08ddf46b05"
       ]
     },
     {
@@ -43,6 +44,12 @@
       "number": 15139,
       "name": "Slime Industries",
       "rir": "ARIN"
+    },
+    {
+      "type": "directory",
+      "spec_version": "2.1",
+      "id": "directory--93c0a9b0-520d-545d-9094-1a08ddf46b05",
+      "path": "C:\\Windows\\System32"
     },
     {
       "type": "domain-name",
