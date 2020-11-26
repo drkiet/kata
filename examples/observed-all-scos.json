@@ -18,7 +18,8 @@
         "artifact--ca17bcf8-9846-5ab4-8662-75c1bf6e63ee",
         "artifact--6f437177-6e48-5cf8-9d9e-872a2bddd641",
         "autonomous-system--f720c34b-98ae-597f-ade5-27dc241e8c74",
-        "directory--93c0a9b0-520d-545d-9094-1a08ddf46b05"
+        "directory--93c0a9b0-520d-545d-9094-1a08ddf46b05",
+        "email-addr--2d77a846-6264-5d51-b586-e43822ea1ea3"
       ]
     },
     {
@@ -50,6 +51,13 @@
       "spec_version": "2.1",
       "id": "directory--93c0a9b0-520d-545d-9094-1a08ddf46b05",
       "path": "C:\\Windows\\System32"
+    },
+    {
+      "type": "email-addr",
+      "spec_version": "2.1",
+      "id": "email-addr--2d77a846-6264-5d51-b586-e43822ea1ea3",
+      "value": "john@example.com",
+      "display_name": "John Doe"
     },
     {
       "type": "domain-name",

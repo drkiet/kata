@@ -108,13 +108,15 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case DirectoryType:
 			dir := unmarshalDirectory(obj)
 			printDirectory(dir)
-		case IPv4AddressType:
-			ipv4 := unmarshalIpV4Address(obj)
-			printIpV4Address(ipv4)
 		case DomainNameType:
 			domain := unmarshalDomainName(obj)
 			printDomainName(domain)
-
+		case EmailAddressType:
+			emailAddress := unmarshalEmailAddress(obj)
+			printEmailAddress(emailAddress)
+		case IPv4AddressType:
+			ipv4 := unmarshalIpV4Address(obj)
+			printIpV4Address(ipv4)
 		// Markings
 		case LanguageContentType:
 			lc := unmarshalLanguageContent(obj)
