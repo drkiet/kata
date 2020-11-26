@@ -114,6 +114,12 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case EmailAddressType:
 			emailAddress := unmarshalEmailAddress(obj)
 			printEmailAddress(emailAddress)
+		case EmailMessageType:
+			emailMessage := unmarshalEmailMessage(obj)
+			printEmailMessage(emailMessage)
+		case FileType:
+			file := unmarshalFile(obj)
+			printFile(file)
 		case IPv4AddressType:
 			ipv4 := unmarshalIpV4Address(obj)
 			printIpV4Address(ipv4)

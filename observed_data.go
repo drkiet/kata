@@ -25,7 +25,7 @@ type ObservedData struct {
 	LastObserved time.Time `json:"last_observed" binding:"required"`
 	NumberObserved int `json:"number_observed" binding:"required"`
 	Objects map[string]interface{} `json:"objects,depreciated"`
-	ObjectRefs []string `json:"object_res,omitempty"`
+	ObjectRefs []string `json:"object_refs,omitempty"`
 }
 
 func unmarshalObservedData(obj json.RawMessage) (observedData ObservedData) {
