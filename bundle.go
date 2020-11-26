@@ -98,6 +98,13 @@ func unmarshal(data []byte) (bundle Bundle) {
 			opinion := unmarshalOpinion(obj)
 			printOpinion(opinion)
 
+		// SCO
+		case IPv4AddressType:
+			ipv4 := unmarshalIpV4Address(obj)
+			printIpV4Address(ipv4)
+		case DomainNameType:
+			domain := unmarshalDomainName(obj)
+			printDomainName(domain)
 
 		// Markings
 		case LanguageContentType:

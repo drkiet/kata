@@ -11,9 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fb7623d-3ec5-4eec-800a-6b73d7a0e769" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/language_content.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain_name.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/observed-ipv4-domain.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ipv4_address.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bundle.go" beforeDir="false" afterPath="$PROJECT_DIR$/bundle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stix_common.go" beforeDir="false" afterPath="$PROJECT_DIR$/stix_common.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
       <recent name="$PROJECT_DIR$/examples" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go imddos">
+  <component name="RunManager" selected="Go Build.go observed-ipv4-domain">
     <configuration name="go  defining-campaign-ta-is" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="kata" />
       <working_directory value="$PROJECT_DIR$" />
@@ -117,6 +120,17 @@
       <module name="kata" />
       <working_directory value="$PROJECT_DIR$" />
       <parameters value="./examples/malware-indicator-for-file-hash.json" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="trankiet.com/kata" />
+      <directory value="$PROJECT_DIR$" />
+      <output_directory value="$PROJECT_DIR$/../../bin" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go observed-ipv4-domain" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="kata" />
+      <working_directory value="$PROJECT_DIR$" />
+      <parameters value="./examples/observed-ipv4-domain.json" />
       <kind value="DIRECTORY" />
       <filePath value="$PROJECT_DIR$/main.go" />
       <package value="trankiet.com/kata" />
@@ -203,6 +217,7 @@
       <item itemvalue="Go Build.go apt1" />
       <item itemvalue="Go Build.go poisonivy" />
       <item itemvalue="Go Build.go imddos" />
+      <item itemvalue="Go Build.go observed-ipv4-domain" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -230,10 +245,10 @@
     </state>
     <state x="710" y="136" width="649" height="555" key="#GOPATH/72.27.1528.768@72.27.1528.768" timestamp="1606133921684" />
     <state x="1111" y="162" width="400" height="684" key="#GOPATH/72.27.2488.948@72.27.2488.948" timestamp="1605094949726" />
-    <state x="705" y="27" width="753" height="768" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606323376691">
+    <state x="705" y="27" width="753" height="768" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606391021664">
       <screen x="72" y="27" width="1528" height="768" />
     </state>
-    <state x="705" y="27" width="753" height="768" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1528.768@72.27.1528.768" timestamp="1606323376691" />
+    <state x="705" y="27" width="753" height="768" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1528.768@72.27.1528.768" timestamp="1606391021664" />
     <state x="889" y="130" width="1084" height="816" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.2488.948@72.27.2488.948" timestamp="1605785239569" />
     <state x="1114" y="301" width="604" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605300925791">
       <screen x="72" y="27" width="2488" height="948" />
@@ -254,25 +269,25 @@
     </state>
     <state x="729" y="261" width="374" height="398" key="FileChooserDialogImpl/72.27.1528.768@72.27.1528.768" timestamp="1606134071388" />
     <state x="1142" y="316" width="424" height="491" key="FileChooserDialogImpl/72.27.2488.948@72.27.2488.948" timestamp="1605301004879" />
-    <state width="1354" height="155" key="GridCell.Tab.0.bottom" timestamp="1606326135890">
+    <state width="1354" height="155" key="GridCell.Tab.0.bottom" timestamp="1606391908545">
       <screen x="72" y="27" width="1528" height="768" />
     </state>
-    <state width="1354" height="155" key="GridCell.Tab.0.bottom/72.27.1528.768@72.27.1528.768" timestamp="1606326135890" />
+    <state width="1354" height="155" key="GridCell.Tab.0.bottom/72.27.1528.768@72.27.1528.768" timestamp="1606391908545" />
     <state width="1107" height="92" key="GridCell.Tab.0.bottom/72.27.2488.948@72.27.2488.948" timestamp="1605789609037" />
-    <state width="1354" height="155" key="GridCell.Tab.0.center" timestamp="1606326135889">
+    <state width="1354" height="155" key="GridCell.Tab.0.center" timestamp="1606391908544">
       <screen x="72" y="27" width="1528" height="768" />
     </state>
-    <state width="1354" height="155" key="GridCell.Tab.0.center/72.27.1528.768@72.27.1528.768" timestamp="1606326135889" />
+    <state width="1354" height="155" key="GridCell.Tab.0.center/72.27.1528.768@72.27.1528.768" timestamp="1606391908544" />
     <state width="1107" height="92" key="GridCell.Tab.0.center/72.27.2488.948@72.27.2488.948" timestamp="1605789609037" />
-    <state width="1354" height="155" key="GridCell.Tab.0.left" timestamp="1606326135888">
+    <state width="1354" height="155" key="GridCell.Tab.0.left" timestamp="1606391908544">
       <screen x="72" y="27" width="1528" height="768" />
     </state>
-    <state width="1354" height="155" key="GridCell.Tab.0.left/72.27.1528.768@72.27.1528.768" timestamp="1606326135888" />
+    <state width="1354" height="155" key="GridCell.Tab.0.left/72.27.1528.768@72.27.1528.768" timestamp="1606391908544" />
     <state width="1107" height="92" key="GridCell.Tab.0.left/72.27.2488.948@72.27.2488.948" timestamp="1605789609036" />
-    <state width="1354" height="155" key="GridCell.Tab.0.right" timestamp="1606326135890">
+    <state width="1354" height="155" key="GridCell.Tab.0.right" timestamp="1606391908544">
       <screen x="72" y="27" width="1528" height="768" />
     </state>
-    <state width="1354" height="155" key="GridCell.Tab.0.right/72.27.1528.768@72.27.1528.768" timestamp="1606326135890" />
+    <state width="1354" height="155" key="GridCell.Tab.0.right/72.27.1528.768@72.27.1528.768" timestamp="1606391908544" />
     <state width="1107" height="92" key="GridCell.Tab.0.right/72.27.2488.948@72.27.2488.948" timestamp="1605789609037" />
     <state width="1354" height="223" key="GridCell.Tab.1.bottom" timestamp="1606306638545">
       <screen x="72" y="27" width="1528" height="768" />
