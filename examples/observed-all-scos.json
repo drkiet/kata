@@ -22,7 +22,10 @@
         "email-addr--2d77a846-6264-5d51-b586-e43822ea1ea3",
         "file--e277603e-1060-5ad4-9937-c26c97f1ca68",
         "file--90bd400b-89a5-51a5-b17d-55bc7719723b",
-        "file--5a27d487-c542-5f97-a131-a8866b477b46"
+        "file--5a27d487-c542-5f97-a131-a8866b477b46",
+        "ipv6-addr--1e61d36c-a16c-53b7-a80f-2a00161c96b1",
+        "ipv6-addr--5daf7456-8863-5481-9d42-237d477697f4"
+
       ]
     },
     {
@@ -110,6 +113,18 @@
       "spec_version": "2.1",
       "id": "ipv4-addr--efcd5e80-570d-4131-b213-62cb18eaa6a8",
       "value": "198.51.100.3"
+    },
+    {
+      "type": "ipv6-addr",
+      "spec_version": "2.1",
+      "id": "ipv6-addr--1e61d36c-a16c-53b7-a80f-2a00161c96b1",
+      "value": "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
+    },
+    {
+      "type": "ipv6-addr",
+      "spec_version": "2.1",
+      "id": "ipv6-addr--5daf7456-8863-5481-9d42-237d477697f4",
+      "value": "2001:0db8::/96"
     }
   ]
 }
