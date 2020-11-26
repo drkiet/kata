@@ -126,6 +126,11 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case IPv6AddressType:
 			ipv6 := unmarshalIpV6Address(obj)
 			printIpV6Address(ipv6)
+		case MACAddressType:
+			mac := unmarshalMacAddress(obj)
+			printMacAddress(mac)
+
+
 		// Markings
 		case LanguageContentType:
 			lc := unmarshalLanguageContent(obj)
