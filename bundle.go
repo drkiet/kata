@@ -99,6 +99,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 			printOpinion(opinion)
 
 		// SCO
+		case ArtifactType:
+			artifact := unmarshalArtifact(obj)
+			printArtifact(artifact)
 		case IPv4AddressType:
 			ipv4 := unmarshalIpV4Address(obj)
 			printIpV4Address(ipv4)
