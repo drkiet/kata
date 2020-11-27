@@ -150,6 +150,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case WindowsRegistryKeyType:
 			wrk := unmarshalWindowsRegistryKey(obj)
 			printWindowsRegistryKey(wrk)
+		case X509CertificateType:
+			cert := unmarshalX509Certificate(obj)
+			printX509Certificate(cert)
 
 		// Markings
 		case LanguageContentType:
