@@ -1,4 +1,4 @@
-package kata
+package main
 
 import (
 	"encoding/binary"

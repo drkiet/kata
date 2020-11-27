@@ -1,4 +1,4 @@
-package kata
+package main
 
 type ObservableContainer struct {
 	Size int
