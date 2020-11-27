@@ -1,4 +1,4 @@
-module trankiet.com/kata
+module github.com/drkiet/kata
 
 go 1.13
 
