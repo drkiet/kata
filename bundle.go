@@ -25,12 +25,12 @@ func marshalBundle(bundle Bundle) (jsonData string){
 
 func unmarshal(data []byte) (bundle Bundle) {
 	bundle = Bundle{}
-	if bundle.Type != BundleType {
-		fmt.Println("Unexpected bundle type ...")
-	}
 	e := json.Unmarshal(data, &bundle)
 	fmt.Printf("e: %v\n", e)
 	check(e)
+	if bundle.Type != BundleType {
+		fmt.Println("Unexpected bundle type ..." + bundle.Type)
+	}
 
 	for _, obj := range bundle.Objects {
 		var stixObject STIXObject
@@ -132,6 +132,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case MutexType:
 			mutex := unmarshalMutex(obj)
 			printMutex(mutex)
+		case NetworkTrafficType:
+			nt := unmarshalNetworkTraffic(obj)
+			printNetworkTraffic(nt)
 
 		// Markings
 		case LanguageContentType:
