@@ -135,6 +135,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case NetworkTrafficType:
 			nt := unmarshalNetworkTraffic(obj)
 			printNetworkTraffic(nt)
+		case ProcessType:
+			proc := unmarshalProcess(obj)
+			printProcess(proc)
 
 		// Markings
 		case LanguageContentType:
