@@ -10,11 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb7623d-3ec5-4eec-800a-6b73d7a0e769" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/x509_certificate.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bundle.go" beforeDir="false" afterPath="$PROJECT_DIR$/bundle.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/observed-all-scos.json" beforeDir="false" afterPath="$PROJECT_DIR$/examples/observed-all-scos.json" afterDir="false" />
-    </list>
+    <list default="true" id="5fb7623d-3ec5-4eec-800a-6b73d7a0e769" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

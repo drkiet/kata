@@ -1,4 +1,4 @@
-package main
+package kata
 
 type MimePartType struct {
 	Body string `json:"body,omitempty"`
