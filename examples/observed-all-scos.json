@@ -26,7 +26,9 @@
         "ipv6-addr--1e61d36c-a16c-53b7-a80f-2a00161c96b1",
         "ipv6-addr--5daf7456-8863-5481-9d42-237d477697f4",
         "mac-addr--65cfcf98-8a6e-5a1b-8f61-379ac4f92d00",
-        "mutex--eba44954-d4e4-5d3b-814c-2b17dd8de300"
+        "mutex--eba44954-d4e4-5d3b-814c-2b17dd8de300",
+        "user-account--0d5b424b-93b8-5cd8-ac36-306e1789d63c",
+        "user-account--9bd3afcf-deee-54f9-83e2-520653cb6bba"
       ]
     },
     {
@@ -138,6 +140,31 @@
       "spec_version": "2.1",
       "id": "mutex--eba44954-d4e4-5d3b-814c-2b17dd8de300",
       "name": "__CLEANSWEEP__"
+    },
+    {
+      "type": "user-account",
+      "spec_version": "2.1",
+      "id": "user-account--0d5b424b-93b8-5cd8-ac36-306e1789d63c",
+      "user_id": "1001",
+      "account_login": "jdoe",
+      "account_type": "unix",
+      "display_name": "John Doe",
+      "is_service_account": false,
+      "is_privileged": false,
+      "can_escalate_privs": true,
+      "account_created": "2016-01-20T12:31:12Z",
+      "credential_last_changed": "2016-01-20T14:27:43Z",
+      "account_first_login": "2016-01-20T14:26:07Z",
+      "account_last_login": "2016-07-22T16:08:28Z"
+    },
+    {
+      "type": "user-account",
+      "spec_version": "2.1",
+      "id": "user-account--9bd3afcf-deee-54f9-83e2-520653cb6bba",
+      "user_id": "thegrugq_ebooks",
+      "account_login": "thegrugq_ebooks",
+      "account_type": "twitter",
+      "display_name": "the grugq"
     }
   ]
 }

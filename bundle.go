@@ -144,6 +144,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case URLType:
 			url := unmarshalUrl(obj)
 			printUrl(url)
+		case UserAccountType:
+			ua := unmarshalUserAccount(obj)
+			printUserAccount(ua)
 
 		// Markings
 		case LanguageContentType:
