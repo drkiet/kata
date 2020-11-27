@@ -147,6 +147,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case UserAccountType:
 			ua := unmarshalUserAccount(obj)
 			printUserAccount(ua)
+		case WindowsRegistryKeyType:
+			wrk := unmarshalWindowsRegistryKey(obj)
+			printWindowsRegistryKey(wrk)
 
 		// Markings
 		case LanguageContentType:
