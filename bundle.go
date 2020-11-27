@@ -141,6 +141,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case SoftwareType:
 			sw := unmarshalSoftware(obj)
 			printSoftware(sw)
+		case URLType:
+			url := unmarshalUrl(obj)
+			printUrl(url)
 
 		// Markings
 		case LanguageContentType:
