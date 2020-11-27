@@ -138,6 +138,9 @@ func unmarshal(data []byte) (bundle Bundle) {
 		case ProcessType:
 			proc := unmarshalProcess(obj)
 			printProcess(proc)
+		case SoftwareType:
+			sw := unmarshalSoftware(obj)
+			printSoftware(sw)
 
 		// Markings
 		case LanguageContentType:
